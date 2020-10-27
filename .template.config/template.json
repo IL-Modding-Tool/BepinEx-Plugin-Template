@@ -1,0 +1,95 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "hooh-hooah",
+  "classifications": ["BepinEx", "AIHS"],
+  "name": "BepinEx Plugin Template",
+  "identity": "BepinEx.Plugin.Template",
+  "shortName": "bepinex",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "sourceName": "ExampleProject",
+  "preferNameDirectory": true,
+  "symbols": {
+    "Copyright": {
+      "type": "parameter",
+      "defaultValue": "",
+      "replaces": "__COPYRIGHT__"
+    },
+    "PluginName": {
+      "type": "parameter",
+      "defaultValue": "Example BepinEx Plugin",
+      "replaces": "__PLUGIN_NAME__"
+    },
+    "PluginGuid": {
+      "type": "parameter",
+      "defaultValue": "com.bepin.example",
+      "replace": "__PLUGIN_GUID__"
+    },
+    "GuidSolution01": {
+      "type": "generated",
+      "generator": "guid",
+      "replaces": "__GUID_SOLUTION_01__",
+      "parameters": {
+        "format": "N"
+      }
+    },
+    "GuidSolution02": {
+      "type": "generated",
+      "generator": "guid",
+      "replaces": "__GUID_SOLUTION_02__",
+      "parameters": {
+        "format": "N"
+      }
+    },
+    "GuidProject": {
+      "type": "generated",
+      "generator": "guid",
+      "replaces": "__GUID_PROJECT__",
+      "parameters": {
+        "format": "N"
+      }
+    },
+    "GuidShared": {
+      "type": "generated",
+      "generator": "guid",
+      "replaces": "__GUID_SHARED__",
+      "parameters": {
+        "format": "N"
+      }
+    },
+    "GuidCommon": {
+      "type": "generated",
+      "generator": "guid",
+      "replaces": "__GUID_COMMON__",
+      "parameters": {
+        "format": "N"
+      }
+    },
+    "GuidHoney": {
+      "type": "generated",
+      "generator": "guid",
+      "replaces": "__GUID_HS2__",
+      "parameters": {
+        "format": "N"
+      }
+    },
+    "GuidAI": {
+      "type": "generated",
+      "generator": "guid",
+      "replaces": "__GUID_AI__",
+      "parameters": {
+        "format": "N"
+      }
+    },
+    "PluginVersion": {
+      "type": "generated",
+      "generator": "constant",
+      "parameters": {
+        "value": "0.0.1"
+      },
+      "replaces": "__PLUGIN_VERSION__"
+    }
+  }
+}

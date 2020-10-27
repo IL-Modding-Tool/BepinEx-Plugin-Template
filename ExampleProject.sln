@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{__GUID_PROJECT__}") = "AI_ExampleProject", "AI_ExampleProject\AI_ExampleProject.csproj", "{__GUID_HS2__}"
+EndProject
+Project("{__GUID_PROJECT__}") = "HS2_ExampleProject", "HS2_ExampleProject\HS2_ExampleProject.csproj", "{__GUID_AI__}"
+EndProject
+Project("{__GUID_SOLUTION_01__}") = "Projects", "Projects", "{__GUID_PROJECT__}"
+EndProject
+Project("{__GUID_SHARED__}") = "IL_ExampleProject", "IL_ExampleProject\IL_ExampleProject.shproj", "{__GUID_COMMON__}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		IL_ExampleProject\IL_ExampleProject.projitems*{__GUID_AI__}*SharedItemsImports = 4
+		IL_ExampleProject\IL_ExampleProject.projitems*{__GUID_HS2__}*SharedItemsImports = 4
+		IL_ExampleProject\IL_ExampleProject.projitems*{__GUID_COMMON__}*SharedItemsImports = 13
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{__GUID_HS2__}.Release|Any CPU.Build.0 = Release|Any CPU
+		{__GUID_HS2__}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{__GUID_AI__}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{__GUID_AI__}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{__GUID_HS2__} = {__GUID_PROJECT__}
+		{__GUID_AI__} = {__GUID_PROJECT__}
+		{__GUID_COMMON__} = {__GUID_PROJECT__}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {__GUID_SOLUTION_02__}
+	EndGlobalSection
+EndGlobal
