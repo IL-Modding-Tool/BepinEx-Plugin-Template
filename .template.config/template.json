@@ -1,6 +1,7 @@
 {
   "$schema": "http://json.schemastore.org/template",
   "author": "hooh-hooah",
+  "description": "BepinEx Plugin Template for ILLUSION's AI/HS2",
   "classifications": ["BepinEx", "AIHS"],
   "name": "BepinEx Plugin Template",
   "identity": "BepinEx.Plugin.Template",

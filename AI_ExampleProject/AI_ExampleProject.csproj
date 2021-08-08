@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -7,13 +7,11 @@
     <ProjectGuid>{__GUID_AI__}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ExampleProjectPlugin</RootNamespace>
-    <AssemblyName>AI_ExampleProject</AssemblyName>
+    <RootNamespace>ExampleProject</RootNamespace>
+    <AssemblyName>ExampleProject</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
-    <SignAssembly>true</SignAssembly>
-    <PublicSign>true</PublicSign>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -42,9 +40,9 @@
   <ItemGroup>
     <PackageReference Include="IllusionLibs.AIGirl.Assembly-CSharp" Version="0.0.0.0" />
     <PackageReference Include="IllusionLibs.AIGirl.Assembly-CSharp-firstpass" Version="0.0.0.0" />
+    <PackageReference Include="IllusionLibs.AIGirl.UnityEngine.CoreModule" Version="0.0.0.0" />
     <PackageReference Include="IllusionLibs.BepInEx" Version="5.3.0.0" />
     <PackageReference Include="IllusionLibs.BepInEx.Harmony" Version="2.0.6.0" />
-    <PackageReference Include="IllusionLibs.AIGirl.UnityEngine.CoreModule" Version="0.0.0.0" />
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
@@ -53,8 +51,19 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>
-      mkdir "$(TargetDir)final"
-      copy /Y "$(TargetDir)$(AssemblyName).dll" "$(TargetDir)final\$(ProjectName).dll"
+      set AZURE_FILTER_DIRECTORY="$(TargetDir)azure"
+      echo %AZURE_FILTER_DIRECTORY%
+      if not exist %AZURE_FILTER_DIRECTORY% (
+          mkdir %AZURE_FILTER_DIRECTORY%
+      )
+
+      copy /Y "$(TargetDir)$(AssemblyName).dll" "%AZURE_FILTER_DIRECTORY%\$(ProjectName).dll"
+
+      if not [$(AIPath)] == "" (
+          if exist "$(AIPath)" (
+              copy /Y "$(TargetDir)$(AssemblyName).dll" "$(AIPath)$(ProjectName).dll"
+          )
+      )
     </PostBuildEvent>
   </PropertyGroup>
 </Project>
